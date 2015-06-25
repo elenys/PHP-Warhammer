@@ -1,0 +1,7 @@
+
+<- Dice ----------------------------------------------------------------------
+The Dice class permet to make a dice trhow;
+
+To throw dice, use getValueDice();
+The function will return a random value beetwin 1 and 6
+---------------------------------------------------------------------- Dice ->
