@@ -1,0 +1,22 @@
+
+<- Direction ----------------------------------------------------------------------
+The Direction class return the direction of the object
+
+Direction take 4 different values [ "NORD" | "SOUTH" | "EAST" | "WEAST" ]
+									  0			1		 2		   4
+You can also use the values asociated (see above);
+
+To create a direction:
+	$YourDirection = new(Direction::$way["DIRECTION"]);
+	or
+	$YourDirection = new(0);
+
+To set a direction:
+	$YourDirection = setDir(Direction::$way["DIRECTION"]);
+	or
+	$YourDirection = setDir(0);
+
+To get a direction:
+	$YourDirection = getDir
+
+---------------------------------------------------------------------- Direction ->
