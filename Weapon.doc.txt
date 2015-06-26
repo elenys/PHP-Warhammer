@@ -1,0 +1,35 @@
+
+<- Weapon ----------------------------------------------------------------------
+This class allows to create weapons for the ships.
+
+The attributes are :
+	name: the name of the weapon.
+	range: the range choose by the player to fire.
+	initCharge: the init amount of charges that the weapon got.
+	shortRangeD(= 4): the mininal number to get with the dice
+						to fire at short range. (const)
+	midRange(= 5): the minimal number to get with the dice
+						to fire at middle range. (const)
+	longRange(= 6): the minimal number to get with the dice
+						to fire at long range. (const)
+	curCharge: the current amount of the charge that the weapon got.
+	shortRange: the range of the weapon to fire at short range.
+	midRange: the range of the weapon to fire at mid range.
+	longRange: the range of the weapon to fire at long range.
+	verbose(= FALSE): Allows the construct and destruct function to write
+						or not.
+
+The methods are:
+	doc: get access at the documentation.
+	__construct: construct the class.
+	__destruct: destruct the class.
+	getRange: get the value of range.
+	setRange: set the value of range.
+	addRange: add 1 at curCharge. Return (-1) if a curCharge has been add.
+	subRange: sub 1 at curCharge. Return (1) if a curCharge has been removed
+						and (0) if curCharge already equal 0.
+	getCharge: get the value of curCharge.
+	reset: reset curCharge at initCharge.
+						(FALSE) if not.
+	shoot:.
+---------------------------------------------------------------------- Weapon ->

@@ -1,0 +1,68 @@
+attention ne pas user public a tout va -> 0
+les docs !
+- une grille
+- deux vaisseaux
+- deplacer les vaisseaux
+- tirer avec les vaisseaux
+
+- classes X
+- attributs et methods X
+- $this X
+- accesseurs X
+- __toString
+
+- invoke X
+- clone et __clone
+- constantes de classes
+- methodes statiques et attributs statiques
+- __call et __call_static
+
+- Heritage X
+- Override
+- protected - self - static
+- classes abstraites et methodes abstraites
+- interfaces
+
+- traits
+- traits mutliples et traits methodes abstraites
+- finalize X
+- exceptions
+- api de reflexivite
+
+1. Init map (150 * 100) ==> fonction init map dans classe map
+	-> obstacles ?
+2. Init player et vaisseaux ==> fonction init map dans classe map
+	-> coins opposees (0 - 0) && (150 - 100) || (150 - 0) && (0 - 100)
+3. Reset vaisseaux ==> fonction reset envoyees a tout les vaisseaux (tout keep dans une var session dans un array ?)
+	-> armes et vaisseaux
+	-> valeurs initiales de speed, pp, armes, used, bouclier
+	-> fonctions reset dans les classes vaisseaux et armes
+4. Nouveau tour
+	-> incremente une valeur tour ?
+5. J1
+6. fonction Phases
+6.1. ordres
+		-> depense pp dans armes, speed, bouclier ou repear vaisseau
+6.2. mouvement
+		-> je sais pas comment tu le geres
+6.3. tir
+		-> choix armes (avec une formu;aire abort tout du long qui permet de "passer la phase attaque ?")
+			-> calcul range
+			-> verif vaisseaux dans range
+				-> si oui
+					-> attack ou non et nom du vqisseaux attaque
+					-> position vaisseaux ennemis
+						-> si oui enfilade (x2 degats ?)
+					-> envoi degats a vaisseaux ennemis.
+				-> si non
+					-> abort
+6.4. verif de fin de partie && tout les vaisseaux joue
+	-> si tout les vaisseuax adverses mort
+		-> go 8.
+	-> si tout les vaisseux joue
+		-> go 3.
+7. J2
+	-> go 6.
+8. fin de game
+	-> destruct all
+	-> bouton reset Game
