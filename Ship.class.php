@@ -83,7 +83,7 @@
 			}
 			return False;
 		}
-
+/*FAUX A REVOIR*/
 		protected function moove ($value) {
 			if ($this->curSpeed + $this->curPower > $value)
 			{

@@ -8,7 +8,7 @@
 		protected $name;
 		protected $curHull;
 		protected $sprite;
-		protected $player;
+		protected $nbrEntity;
 		protected $width;
 		protected $leght;
 
