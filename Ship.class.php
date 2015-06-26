@@ -32,9 +32,8 @@
 				$totalMoove = $ret['newMoove'];
 				$this->collide($getEntity($ret['entityNbr']));
 			}
-			if ($dir == "NORD")
+			if ($dir == "NORTH")
 			{
-
 				$this->z1Tail['y'] += $totalMoove;
 				$this->z2Tail['y'] += $totalMoove;
 				$this->z1Head['y'] += $totalMoove;
@@ -54,7 +53,7 @@
 				$this->z1Head['x'] += $totalMoove;
 				$this->z2Head['x'] += $totalMoove;
 			}
-			else if ($dir == "WEAST")
+			else if ($dir == "WEST")
 			{
 				$this->z1Tail['x'] -= $totalMoove;
 				$this->z2Tail['x'] -= $totalMoove;
