@@ -5,21 +5,23 @@
 	*/
 	abstract class BoardEntity
 	{
-		protected		$name;
-		protected		$curHull;
-		protected		$sprite;
-		protected 		$player;
-		protected 		$width;
-		protected 		$leght;
+		protected $name;
+		protected $curHull;
+		protected $sprite;
+		protected $player;
+		protected $width;
+		protected $leght;
 
-		protected 		$initHull;
-		protected array $z1Head;
-		protected array $z2Head;
-		protected array $z1Tail;
-		protected array $z2Tail;
-		protected 		$direction;
+		protected $initHull;
+		protected $z1Head = array();
+		protected $z2Head = array();
+		protected $z1Tail = array();
+		protected $z2Tail = array();
+		protected $direction;
 
 		abstract function __construct();
+		
+
 	}
 
 ?>
