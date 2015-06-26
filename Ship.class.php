@@ -25,28 +25,36 @@
 		
 		private function changeShipPos ($totalMoove)
 		{
-			if ($this->getDir == "NORD")
+			$dir = $this->getDir();
+			$ret = entityIsOnTrajectory($totalMoove, $dir, $this->z1Head, $this->z2Head);
+			if ($newTotalMoove !== False)
 			{
+				$totalMoove = $ret['newMoove'];
+				$this->collide($getEntity($ret['entityNbr']));
+			}
+			if ($dir == "NORD")
+			{
+
 				$this->z1Tail['y'] += $totalMoove;
 				$this->z2Tail['y'] += $totalMoove;
 				$this->z1Head['y'] += $totalMoove;
 				$this->z2Head['y'] += $totalMoove;
 			}
-			else if ($this->getDir == "SOUTH")
+			else if ($dir == "SOUTH")
 			{
 				$this->z1Tail['y'] -= $totalMoove;
 				$this->z2Tail['y'] -= $totalMoove;
 				$this->z1Head['y'] -= $totalMoove;
 				$this->z2Head['y'] -= $totalMoove;
 			}
-			else if ($this->getDir == "EAST")
+			else if ($dir == "EAST")
 			{
 				$this->z1Tail['x'] += $totalMoove;
 				$this->z2Tail['x'] += $totalMoove;
 				$this->z1Head['x'] += $totalMoove;
 				$this->z2Head['x'] += $totalMoove;
 			}
-			else if ($this->getDir == "WEAST")
+			else if ($dir == "WEAST")
 			{
 				$this->z1Tail['x'] -= $totalMoove;
 				$this->z2Tail['x'] -= $totalMoove;
@@ -105,8 +113,13 @@
 
 		}
 
-		protected function collide ($otherShip) {
-
+		protected function collide ($otherEntity) {
+			$this->changeMovingStatus(False);
+			if (property_exists($otherEntity, $isMoving) == True)
+				$otherEntity->changeMovingStatus(False);
+			$tmpHull = $this->curHull;
+			$this->getDamage($otherEntity->getCurHull());
+			$otherEntity->getDamage($tmpHull);
 		}
 
 		protected function loosPower($value) {
@@ -116,7 +129,7 @@
 		}
 
 		public function canUseRepair(){
-			if ($this->isMoving === False && $this->$curPower > 0)
+			if ($this->isMoving === False && $this->curPower > 0)
 				return True;
 			else
 				return False;
@@ -140,6 +153,11 @@
 				$this->shipDestroyed();*/
 			// le vaisseau a subis $dammage;
 		}
+
+		public function changeMovingStatus($newStatus) {
+			$isMoving = $newStatus;
+		}
+
 	}
 
 ?>

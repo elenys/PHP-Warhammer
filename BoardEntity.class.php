@@ -21,7 +21,9 @@
 
 		abstract function __construct();
 		
-
+		public function getCurHull() {
+			return $curHull;
+		}
 	}
 
 ?>
